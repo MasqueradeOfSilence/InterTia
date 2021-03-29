@@ -2,7 +2,7 @@
 Productivity app, initially created for CS 456: User Interface Software. Based on the principle of discomfort design, specifically discomfort through structure.
 
 # About This App
-InerTia is **I**ntelligent **T**hinking. Designed and built by Evenstar Creative, our mission is to help you achieve your life's goals. Our belief is that this is accomplished by 4 key principles:
+**I**ner**T**ia is **I**ntelligent **T**hinking. Designed and built by Evenstar Creative, our mission is to help you achieve your life's goals. Our belief is that this is accomplished by 4 key principles:
 
 1) Setting and tracking goals.
 2) Setting aside regular time to work on these goals: an autopilot schedule.
