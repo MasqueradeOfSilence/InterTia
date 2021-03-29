@@ -15,7 +15,7 @@ This approach is inherently discomfortable. Being discomfortable, in our view, i
 
 The biggest challenge is to implement a system that keeps this as lightweight and simple as possible. InerTia is our valiant effort to achieve that. This system is based loosely on a few key principles taught by Cal Newport in his blog Study Hacks, in application format.
 
-At Evenstar Creative, we don't believe in dabbling. We believe in focusing on as many areas as desired, yes, but with an intent to master each one. We reject the modern-day zeitgeist of both specialization and generalization, and instead focus on true mastery. At Evenstar, we believe in lifelong commitment, and being "in it to win it".
+At Evenstar Creative, we don't believe in dabbling. We believe in focusing on as many areas as desired, yes, but with an intent to master each one. We reject the modern-day zeitgeist of both specialization and generalization, and instead focus on true mastery. At Evenstar, we believe in being a master of many trades. At Evenstar, we believe in lifelong commitment, and being "in it to win it".
 
 Designed by Alex Neville, a software engineer/writer/runner/weight lifter/digital artist/theme park enthusiast/musician/PLC programmer/IT guy with big dreams and predominantly inattentive ADHD. I've always had trouble with the big question: How do I balance doing everything that I love? Because I refuse to drop a single thing. With InerTia, our hope is that you'll never have to. 
 
