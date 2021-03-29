@@ -7,4 +7,4 @@ For CS 456, I am required to put at least 55 hours of work into this project. Wh
 
 **Monday 3/29:** 8:50 AM - 9:25 AM: 35 minutes (total = 3 hour, 40 minutes)
 
-Second session: 11:15 AM - 
+Then do it again: 11:15 AM - 11:50 AM (total = 4 hours, 15 minutes) 
