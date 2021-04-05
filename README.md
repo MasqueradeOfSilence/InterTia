@@ -19,4 +19,4 @@ At Evenstar Creative, we don't believe in dabbling. We believe in focusing on as
 
 Designed by Alex Neville, a software engineer/writer/runner/weight lifter/digital artist/theme park enthusiast/musician/PLC programmer/IT guy with big dreams and predominantly inattentive ADHD. I've always had trouble with the big question: How do I balance doing everything that I love? Because I refuse to drop a single thing. With InerTia, our hope is that you'll never have to. 
 
-For questions, commennts, or bugs, contact Alex Neville at softwaredev [at] alexanderneville [dot] com. 
+For questions, comments, or bugs, contact Alex Neville at softwaredev [at] alexanderneville [dot] com. 
