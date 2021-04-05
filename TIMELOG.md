@@ -11,3 +11,17 @@ Then do it again: 11:15 AM - 11:50 AM (total = 4 hours, 15 minutes)
 Then: 8:50 PM - 9:20 PM (total = 4 hours, 45 minutes)
 **Tuesday 3/30:** 10:15 AM - 10:45 AM
 7:10 PM - 8:10 PM
+
+**Wednesday 3/31:** 11:30 AM - 12:00 PM (6 hours, 45 minutes)
+2:00 PM - 3:00 PM
+
+**Thursday, 4/01:** 10:15 AM - 10:45 AM
+7:45 PM - 9:00 PM (total: 13 hours)
+
+**Friday, 4/02:** 7:00 PM - 9:30 PM
+
+**Saturday, 4/03:** 10:10 AM - 10:20 PM. Total: 25.5 hours. Rounding down (due to a few breaks).
+
+**Sunday, 4/04:** 8:40 PM - 9:40 PM Total: 26.5 hours.
+
+**Monday, 4/05:** 10:05 AM -
