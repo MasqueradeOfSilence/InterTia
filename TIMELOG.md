@@ -25,3 +25,5 @@ Then: 8:50 PM - 9:20 PM (total = 4 hours, 45 minutes)
 **Sunday, 4/04:** 8:40 PM - 9:40 PM Total: 26.5 hours.
 
 **Monday, 4/05:** 10:05 AM - 11:40 AM (Total: 28 hours)
+12:45 - 2:30 PM (Total: 29.75 hours) 
+
