@@ -97,6 +97,7 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Image.asset('assets/images/logo1.png'),
             Text(
               'You have pushed the button this many times:',
             ),
