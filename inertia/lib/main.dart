@@ -99,7 +99,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Image.asset('assets/images/logo1.png'),
             Text(
-              'You have pushed the button this many times:',
+              'You have pushed the button this many times, son:',
             ),
             Text(
               '$_counter',
