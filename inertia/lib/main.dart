@@ -35,12 +35,6 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
 
-  final List<Tab> myTabs = <Tab>[
-    Tab(text: "AUTOPILOT"),
-    Tab(text: "GOALS"),
-    Tab(text: "MOSQUITO"),
-  ];
-
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
   // how it looks.
@@ -105,6 +99,15 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             Image.asset("assets/images/logo1.png"),
+            DefaultTabController(length: 4, child: TabBar(
+                tabs: [
+                  Tab(text: "CAPTURE"),
+                  Tab(text: "AUTOPILOT"),
+                  Tab(text: "GOALS"),
+                  Tab(text: "MOSQUITO"),
+                ],
+              ),
+            ),
           ],
         ),
       ),
