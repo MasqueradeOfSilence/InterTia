@@ -43,6 +43,7 @@ flutter:
   # Add my image: see https://suragch.medium.com/how-to-include-images-in-your-flutter-app-863889fc0b29
   assets:
     - assets/images/logo1.png
+    - assets/images/shatter12.gif
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
