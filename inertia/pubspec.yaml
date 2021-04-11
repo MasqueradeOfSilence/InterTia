@@ -24,6 +24,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_calendar_carousel:
+  syncfusion_flutter_calendar: ^19.1.55
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -44,6 +45,7 @@ flutter:
   assets:
     - assets/images/logo1.png
     - assets/images/shatter12.gif
+    - assets/images/shatter19.gif
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:inertia/strings.dart';
+// import 'package:syncfusion_flutter_calendar/calendar.dart';
 
 void main() {
   runApp(MyApp());
@@ -108,11 +109,15 @@ class _MyHomePageState extends State<MyHomePage> {
             Center(
               child: Text("Mosquito", style: TextStyle(color: Colors.white60)),
             ),
-            Column(
-              children: [
-                Text(Strings.aboutUs, style: TextStyle(color: Colors.white)),
-                // Image.asset("assets/images/shatter12.gif"),
-              ],
+            SingleChildScrollView(
+              padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
+              child: Column(
+                children: [
+                  Text(Strings.aboutUsTitle, style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold)),
+                  Text(Strings.aboutUs, style: TextStyle(color: Colors.white, fontSize: 20)),
+                  Image.asset("assets/images/shatter19.gif"),
+                ],
+              ),
             ),
             Center(
               child: Text("Account", style: TextStyle(color: Colors.white60)),

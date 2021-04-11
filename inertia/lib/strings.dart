@@ -1,13 +1,13 @@
 class Strings extends Object {
+  static String aboutUsTitle = "\nAbout This App\n";
   static String aboutUs = """
-  About This App
+  InerTia is Intelligent Thinking. Designed and built by Evenstar Creative, our mission is to help you achieve your life's goals. Our belief is that this is accomplished by 5 key principles:
   
-  InerTia is Intelligent Thinking. Designed and built by Evenstar Creative, our mission is to help you achieve your life's goals. Our belief is that this is accomplished by 4 key principles:
-  
-  - Setting and tracking goals.
-  - Setting aside regular time to work on these goals: an autopilot schedule.
-  - Focusing on deep work during this time.
-  - Getting boring, logistical "mosquito tasks" completed as quickly and efficiently as possible, so you have more time to focus on the big stuff.
+  • Writing down and tracking all your to-do items. 
+  • Setting and tracking goals.
+  • Setting aside regular time to work on these goals: an autopilot schedule.
+  • Focusing on deep work during this time.
+  • Getting boring, logistical "mosquito tasks" completed as quickly and efficiently as possible, so you have more time to focus on the big stuff.
   
   The principle of inertia states that an object in rest stays in rest, and an object in motion stays in motion, unless acted upon by an outside force. Our goal is to help you become your own force. To stay in motion.
   
