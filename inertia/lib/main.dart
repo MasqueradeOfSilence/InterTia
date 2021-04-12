@@ -59,8 +59,8 @@ class _MyHomePageState extends State<MyHomePage> {
   CalendarDataSource _dataSource;
 
   _getDataSource() {
-    List<Meeting> toDoItems = <Meeting>[];
-    return toDoItems;
+    // List<Meeting> toDoItems = <Meeting>[];
+    // return toDoItems;
   }
 
   @override
