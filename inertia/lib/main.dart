@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:inertia/strings.dart';
+import 'package:inertia/states_manager.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
+import 'package:syncfusion_flutter_core/theme.dart';
 
 void main() {
   runApp(MyApp());
@@ -110,7 +112,29 @@ class _MyHomePageState extends State<MyHomePage> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Container(
-                          height: 500.0, child: SfCalendar(),
+                          height: 500.0,
+                          child: SfCalendarTheme(
+                            data: SfCalendarThemeData(
+                              brightness: Brightness.dark,
+                              backgroundColor: Colors.black,
+                            ),
+                            child: SafeArea(child:
+                            SfCalendar(
+                                view: States.currentView,
+                                showNavigationArrow: true,
+                                firstDayOfWeek: 1,
+                                showDatePickerButton: true,
+                                allowViewNavigation: true,
+                                allowedViews: <CalendarView>
+                                [
+                                  CalendarView.day,
+                                  CalendarView.week,
+                                  CalendarView.month,
+                                  CalendarView.schedule,
+                                ],
+                              ),
+                            ),
+                          ),
                         ),
                       ],
                     ),
@@ -123,7 +147,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       minimumSize: Size(250, 70),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(18.0),
-                      )
+                      ),
                     ),
                     onPressed: () => {
 

@@ -1,0 +1,5 @@
+import 'package:syncfusion_flutter_calendar/calendar.dart';
+
+class States extends Object {
+  static CalendarView currentView = CalendarView.day;
+}
