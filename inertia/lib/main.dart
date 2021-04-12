@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:inertia/strings.dart';
-// import 'package:syncfusion_flutter_calendar/calendar.dart';
+import 'package:syncfusion_flutter_calendar/calendar.dart';
 
 void main() {
   runApp(MyApp());
@@ -101,7 +101,36 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text("Capture", style: TextStyle(color: Colors.white60)),
             ),
             Center(
-              child: Text("Autopilot", style: TextStyle(color: Colors.white60)),
+              child: Column(
+                children: [
+                  Text("\nSCHEDULE", style: TextStyle(color: Color.fromRGBO(175, 238, 238, 1), fontSize: 50)),
+                  SingleChildScrollView(
+                    padding: EdgeInsets.fromLTRB(40, 20, 40, 20),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Container(
+                          height: 500.0, child: SfCalendar(),
+                        ),
+                      ],
+                    ),
+                  ),
+                  TextButton.icon(
+                    icon: const Icon(Icons.add, color: Colors.white, size: 35),
+                    label: Text("New Autopilot ", style: TextStyle(color: Colors.white, fontSize: 35)),
+                    style: TextButton.styleFrom(
+                      backgroundColor: Colors.green,
+                      minimumSize: Size(250, 70),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(18.0),
+                      )
+                    ),
+                    onPressed: () => {
+
+                    },
+                  ),
+                ],
+              ),
             ),
             Center(
               child: Text("Goals", style: TextStyle(color: Colors.white60)),
@@ -110,11 +139,11 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text("Mosquito", style: TextStyle(color: Colors.white60)),
             ),
             SingleChildScrollView(
-              padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
+              padding: EdgeInsets.fromLTRB(40, 20, 40, 20),
               child: Column(
                 children: [
-                  Text(Strings.aboutUsTitle, style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold)),
-                  Text(Strings.aboutUs, style: TextStyle(color: Colors.white, fontSize: 20)),
+                  Text(Strings.aboutUsTitle, style: TextStyle(color: Color.fromRGBO(175, 238, 238, 1), fontSize: 30, fontWeight: FontWeight.bold)),
+                  Text(Strings.aboutUs, style: TextStyle(color: Color.fromRGBO(144, 252, 249, 1), fontSize: 20)),
                   Image.asset("assets/images/shatter19.gif"),
                 ],
               ),
