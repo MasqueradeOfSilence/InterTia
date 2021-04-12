@@ -56,16 +56,17 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  CalendarDataSource _dataSource;
 
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
+  _getDataSource() {
+    List<Meeting> toDoItems = <Meeting>[];
+    return toDoItems;
+  }
+
+  @override
+  void initState() {
+    _dataSource = _getDataSource();
+    super.initState();
   }
 
   @override
@@ -102,7 +103,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Center(
               child: Text("Capture", style: TextStyle(color: Colors.white60)),
             ),
-            Center(
+            SingleChildScrollView(
               child: Column(
                 children: [
                   Text("\nSCHEDULE", style: TextStyle(color: Color.fromRGBO(175, 238, 238, 1), fontSize: 50)),
