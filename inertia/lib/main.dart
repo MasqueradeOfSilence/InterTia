@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:inertia/strings.dart';
 import 'package:inertia/states_manager.dart';
+import 'package:inertia/meeting.dart';
+import 'package:inertia/task_editor.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 import 'package:syncfusion_flutter_core/theme.dart';
 
@@ -36,8 +38,28 @@ class MyApp extends StatelessWidget {
   }
 }
 
+class TimeBlockDataSource extends CalendarDataSource {
+  TimeBlockDataSource(List<Meeting> source) {
+    appointments = source;
+  }
+  @override
+  DateTime getStartTime(int index) => appointments![index].from;
+
+  @override
+  DateTime getEndTime(int index) => appointments![index].to;
+
+  @override
+  String getSubject(int index) => appointments![index].eventName;
+
+  @override
+  Color getColor(int index) => appointments![index].background;
+
+  @override
+  String getNotes(int index) => appointments![index].description;
+}
+
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({required this.title}) : super();
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -55,18 +77,60 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-  CalendarDataSource _dataSource;
+  late List<Meeting> appointments;
+  // CalendarDataSource _dataSource = new TimeBlockDataSource();
 
-  _getDataSource() {
-    // List<Meeting> toDoItems = <Meeting>[];
-    // return toDoItems;
+  List<Meeting> getMeetingDetails() {
+    final List<Meeting> meetingCollection = <Meeting>[];
+
+    final DateTime today = DateTime.now();
+    for (int month = -1; month < 2; month++) {
+      for (int day = -5; day < 5; day++) {
+        for (int hour = 9; hour < 18; hour += 5) {
+          meetingCollection.add(Meeting(
+            from: today
+                .add(Duration(days: (month * 30) + day))
+                .add(Duration(hours: hour)),
+            to: today
+              .add(Duration(days: (month * 30) + day))
+              .add(Duration(hours: hour + 2)),
+            background: Colors.greenAccent,
+            description: "Example Event",
+            eventName: "SuperCool Festival",
+          ));
+        }
+      }
+    }
+
+    return meetingCollection;
   }
 
   @override
   void initState() {
-    _dataSource = _getDataSource();
     super.initState();
+    appointments = getMeetingDetails();
+  }
+
+  void autopilotTapped() {
+    setState(() {
+      Navigator.push<Widget>(
+        context,
+        MaterialPageRoute(builder: (BuildContext context) => TaskEditor()),
+      );
+    });
+  }
+
+  void calendarTapped(CalendarTapDetails calendarTapDetails) {
+    if (calendarTapDetails.targetElement != CalendarElement.calendarCell &&
+        calendarTapDetails.targetElement != CalendarElement.appointment) {
+      return;
+    }
+    setState(() {
+      Navigator.push<Widget>(
+        context,
+        MaterialPageRoute(builder: (BuildContext context) => TaskEditor()),
+      );
+    });
   }
 
   @override
@@ -133,6 +197,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   CalendarView.month,
                                   CalendarView.schedule,
                                 ],
+                                onTap: calendarTapped,
                               ),
                             ),
                           ),
@@ -150,9 +215,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         borderRadius: BorderRadius.circular(18.0),
                       ),
                     ),
-                    onPressed: () => {
-
-                    },
+                    onPressed: autopilotTapped,
                   ),
                 ],
               ),
