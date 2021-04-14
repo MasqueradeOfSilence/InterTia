@@ -31,7 +31,8 @@ class MyApp extends StatelessWidget {
         // the app on. For desktop platforms, the controls will be smaller and
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
-        scaffoldBackgroundColor: Colors.black
+        scaffoldBackgroundColor: Colors.black,
+        unselectedWidgetColor: Colors.blue.shade900,
       ),
       home: MyHomePage(title: "InerTia"),
     );
@@ -164,8 +165,35 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         body: TabBarView(
           children: [
-            Center(
-              child: Text("Capture", style: TextStyle(color: Colors.white60)),
+            SingleChildScrollView(
+              child: Column(
+                children: [
+                  Text("\nFULL CAPTURE\n", style: TextStyle(color: Color.fromRGBO(175, 238, 238, 1), fontSize: 50)),
+                  Container(
+                    decoration: BoxDecoration(
+                      border: Border(
+                        bottom: BorderSide(color: Colors.blue, width: 0.5),
+                        top: BorderSide(color: Colors.blue, width: 0.5),
+                      ),
+                    ),
+                    child: Column(
+                      children: [
+                        CheckboxListTile(
+                          title: Text("Use InerTia app", style: TextStyle(color: Colors.white70, fontSize: 20)),
+                          value: States.firstCheckboxSelected,
+                          onChanged: (bool? changed) {
+                            setState(() {
+                              States.firstCheckboxSelected = changed!;
+                            });
+                          },
+                          checkColor: Colors.black,
+                          activeColor: Colors.blue.shade900,
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
             SingleChildScrollView(
               child: Column(
