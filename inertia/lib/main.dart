@@ -79,6 +79,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   late List<Meeting> appointments;
+  List<Container> checkboxList = [];
   // CalendarDataSource _dataSource = new TimeBlockDataSource();
 
   List<Meeting> getMeetingDetails() {
@@ -106,10 +107,50 @@ class _MyHomePageState extends State<MyHomePage> {
     return meetingCollection;
   }
 
+  void removeItem(int index) {
+    setState(() {
+      print("removing");
+      print("Size before: " + checkboxList.length.toString());
+      print("Index: " + index.toString());
+      checkboxList = List.from(checkboxList)
+        ..removeAt(index);
+      print("Size after: " + checkboxList.length.toString());
+    });
+  }
+
   @override
   void initState() {
     super.initState();
     appointments = getMeetingDetails();
+    Container c = Container(
+      decoration: BoxDecoration(
+        border: Border(
+          bottom: BorderSide(color: Colors.blue, width: 0.5),
+          top: BorderSide(color: Colors.blue, width: 0.5),
+        ),
+      ),
+      child: Column(
+        children: [
+          CheckboxListTile(
+            title: Text("Use InerTia app", style: TextStyle(color: Colors.white70, fontSize: 20)),
+            value: States.firstCheckboxSelected,
+            selected: States.firstCheckboxSelected,
+            onChanged: (bool? changed) {
+              setState(() {
+                States.firstCheckboxSelected = !States.firstCheckboxSelected;
+              });
+            },
+            checkColor: Colors.black,
+            activeColor: Colors.blue.shade900,
+            secondary: IconButton(
+              icon: const Icon(Icons.delete, color: Colors.blueGrey),
+              onPressed: () => removeItem(0),
+            ),
+          ),
+        ],
+      ),
+    );
+    checkboxList.add(c);
   }
 
   void autopilotTapped() {
@@ -132,6 +173,53 @@ class _MyHomePageState extends State<MyHomePage> {
         MaterialPageRoute(builder: (BuildContext context) => TaskEditor()),
       );
     });
+  }
+
+  void addNewCheckItem() {
+    print("Adding new container");
+    int currentLength = checkboxList.length;
+    Container c = Container(
+      decoration: BoxDecoration(
+        border: Border(
+          bottom: BorderSide(color: Colors.blue, width: 0.5),
+          top: BorderSide(color: Colors.blue, width: 0.5),
+        ),
+      ),
+      child: Column(
+        children: [
+          CheckboxListTile(
+            title: TextField(style: TextStyle(color: Colors.white70, fontSize: 20),
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                hintText: "New Capture Item",
+                hintStyle: TextStyle(color: Colors.lightBlueAccent),
+              )),
+            value: States.secondCheckboxSelected,
+            selected: States.secondCheckboxSelected,
+            onChanged: (bool? changed) {
+              setState(() {
+                print("Changed: " + changed.toString());
+                print("selected? " + States.secondCheckboxSelected.toString());
+                States.secondCheckboxSelected = !States.secondCheckboxSelected;
+              });
+            },
+            checkColor: Colors.black,
+            activeColor: Colors.blue.shade900,
+            secondary: IconButton(
+              icon: const Icon(Icons.delete, color: Colors.blueGrey),
+              onPressed: () => removeItem(currentLength),
+            ),
+          ),
+        ],
+      ),
+    );
+    setState(() {
+      checkboxList.add(c);
+    });
+  }
+
+  List<Container> getCheckboxList() {
+    return checkboxList;
   }
 
   @override
@@ -170,26 +258,29 @@ class _MyHomePageState extends State<MyHomePage> {
                 children: [
                   Text("\nFULL CAPTURE\n", style: TextStyle(color: Color.fromRGBO(175, 238, 238, 1), fontSize: 50)),
                   Container(
-                    decoration: BoxDecoration(
-                      border: Border(
-                        bottom: BorderSide(color: Colors.blue, width: 0.5),
-                        top: BorderSide(color: Colors.blue, width: 0.5),
+                    height: 450,
+                    child: SingleChildScrollView(
+                      child: Column(
+                        children: getCheckboxList(),
                       ),
                     ),
-                    child: Column(
-                      children: [
-                        CheckboxListTile(
-                          title: Text("Use InerTia app", style: TextStyle(color: Colors.white70, fontSize: 20)),
-                          value: States.firstCheckboxSelected,
-                          onChanged: (bool? changed) {
-                            setState(() {
-                              States.firstCheckboxSelected = changed!;
-                            });
-                          },
-                          checkColor: Colors.black,
-                          activeColor: Colors.blue.shade900,
+                  ),
+                  Align(
+                    alignment: FractionalOffset.bottomCenter,
+                    child: Padding(
+                      padding: EdgeInsets.only(bottom: 10.0),
+                      child: TextButton.icon(
+                        icon: const Icon(Icons.add, color: Colors.white, size: 35),
+                        label: Text("New Capture ", style: TextStyle(color: Colors.white, fontSize: 35)),
+                        style: TextButton.styleFrom(
+                          backgroundColor: Colors.green,
+                          minimumSize: Size(250, 70),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(18.0),
+                          ),
                         ),
-                      ],
+                        onPressed: addNewCheckItem,
+                      ),
                     ),
                   ),
                 ],
@@ -251,8 +342,60 @@ class _MyHomePageState extends State<MyHomePage> {
             Center(
               child: Text("Goals", style: TextStyle(color: Colors.white60)),
             ),
-            Center(
-              child: Text("Mosquito", style: TextStyle(color: Colors.white60)),
+            SingleChildScrollView(
+              child: Column(
+                children: [
+                  Text("\nMOSQUITO\n", style: TextStyle(color: Color.fromRGBO(175, 238, 238, 1), fontSize: 50)),
+                  Container(
+                    height: 450,
+                    child: Column(
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                            border: Border(
+                              bottom: BorderSide(color: Colors.blue, width: 0.5),
+                              top: BorderSide(color: Colors.blue, width: 0.5),
+                            ),
+                          ),
+                          child: Column(
+                            children: [
+                              CheckboxListTile(
+                                title: Text("Clean Apartment", style: TextStyle(color: Colors.white70, fontSize: 20)),
+                                value: States.firstCheckboxSelected,
+                                onChanged: (bool? changed) {
+                                  setState(() {
+                                    States.firstCheckboxSelected = changed!;
+                                  });
+                                },
+                                checkColor: Colors.black,
+                                activeColor: Colors.blue.shade900,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Align(
+                    alignment: FractionalOffset.bottomCenter,
+                    child: Padding(
+                      padding: EdgeInsets.only(bottom: 10.0),
+                      child: TextButton.icon(
+                        icon: const Icon(Icons.add, color: Colors.white, size: 35),
+                        label: Text("New Mosquito ", style: TextStyle(color: Colors.white, fontSize: 35)),
+                        style: TextButton.styleFrom(
+                          backgroundColor: Colors.green,
+                          minimumSize: Size(250, 70),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(18.0),
+                          ),
+                        ),
+                        onPressed: autopilotTapped,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
             SingleChildScrollView(
               padding: EdgeInsets.fromLTRB(40, 20, 40, 20),
