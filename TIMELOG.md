@@ -3,7 +3,7 @@ For CS 456, I am required to put at least 55 hours of work into this project. Wh
 I will only be doing a timelog for the class. 
 
 # March 2021
-**Monday 3/22:** 11 AM - 12:05 PM, 5:40 PM - 6:20 PM
+**Monday 3/22:** 11 AM - 12:05 PM, 5:40 PM - 6:20 PM\
 
 **Sunday 3/28:** 8:30 PM - 10:00 PM (Total: 185 minutes = 3 hours, 5 minutes)
 
@@ -31,6 +31,7 @@ Then: 8:50 PM - 9:20 PM (total = 4 hours, 45 minutes)
 **Sunday, 4/04:** 8:40 PM - 9:40 PM Total: 26.5 hours.
 
 **Monday, 4/05:** 10:05 AM - 11:40 AM (Total: 28 hours)
+
 12:45 - 2:30 PM (Total: 29.75 hours) 
 
 **Tuesday, 4/06:** 15 minutes in the morning, 10:30 AM - 10:45 AM
