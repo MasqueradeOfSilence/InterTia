@@ -5,8 +5,7 @@ I will only be doing a timelog for the class.
 # March 2021
 **Monday 3/22:** 11 AM - 12:05 PM, 5:40 PM - 6:20 PM
 
-\
-&nbsp;
+* * *
 **Sunday 3/28:** 8:30 PM - 10:00 PM (Total: 185 minutes = 3 hours, 5 minutes)
 
 **Monday 3/29:** 8:50 AM - 9:25 AM: 35 minutes (total = 3 hour, 40 minutes)
